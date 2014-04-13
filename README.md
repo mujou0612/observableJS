@@ -78,8 +78,7 @@ Call **remove()** on a property can delete the property itself and all event han
         console.log('title updated from ' + old_val + ' to ' + new_val);
       });
 
-      // Updates 'details.title' property, which will trigger the hooled     
-        'update' event.
+      // Updates 'details.title' property, which will trigger the hooled 'update' event.
       profile.detail.title('PM');
 
       // Hooks 'remove' event on 'age' property
@@ -87,12 +86,10 @@ Call **remove()** on a property can delete the property itself and all event han
         console.log('age removed (' + removed + ')');
       });
 
-      // Removes 'age' property, which will trigger the hooked 'remove' 
-         event.
+      // Removes 'age' property, which will trigger the hooked 'remove' event.
       profile.age.remove();
 
-      // Causes an exception because the input of onRemove() must be 
-         function.
+      // Causes an exception because the input of onRemove() must be function.
       profile.name.onRemove("hello");
 
     }, false);
