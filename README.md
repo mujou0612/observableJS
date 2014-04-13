@@ -1,9 +1,9 @@
-ObservableJS: A tiny function to create objects with 'observable' properties.
+ObservableJS: Make object properties 'observable'.
 =============
 
-ObservableJS can turn javascript objects with property/value pairs into 'observale' ones. The 'observable' objects here indicates that properties will trigger specific hooked event handlers when they are got changed(updated/removed).
+ObservableJS can turn javascript object properties into 'observale' ones. The 'observable' here indicates that properties will trigger specific pre-hooked event handlers when they get changed(updated/removed).
 
-Observable objects provide a more modular way to organize behaviors on client-side data model when building web apps.  
+Making propertis Observable provide a modular way to organize behaviors on client-side data model when building web apps.
 
 ###- Create observable objects###
 Create an observable object with observableJS is quite straightforward:
