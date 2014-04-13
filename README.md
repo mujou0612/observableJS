@@ -45,7 +45,7 @@ Call **remove()** on a property can delete the property itself and all hooked ev
         // Delete the property from observableObject
         observableObject.property1.remove(); 
 
-##NOTE: objects are "recursively affected" by observaleJS, which means that if the value of a propery is Array or another Object. its properies are tranformed into functions as getters/setters and can be hooked event handlers.##
+###NOTE: objects are "recursively affected" by observaleJS, which means that if the value of a propery is Array or another Object. its properies are tranformed into functions as getters/setters and can be hooked event handlers.
 
 >To be more precisely, Arrays themselves are also Objects, and indexes (0, 1, 2, 3...) are in fact properties of them.
 
