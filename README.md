@@ -10,8 +10,8 @@ Create an observable object with observableJS is quite straightforward:
 
         var observableObject = $.observale({
               property1: value1,
-              property1: value1,
-              property1: value1,
+              property2: value2,
+              property3: value3,
               ...
         });
 
