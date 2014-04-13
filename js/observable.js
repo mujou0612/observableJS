@@ -1,3 +1,6 @@
+/**
+ * observableJS @copyright niteBell.inc (author: xianyee.xing) 
+ */
 (function($){
   
   $.observable = function(input_obj) {
@@ -58,16 +61,22 @@
         }
       };
 
-      that[key].on = function(event_name, fn) {
+      that[key].onUpdate = function(fn) {
+        _hook("update", fn)
+      };
+
+      that[key].onRemove = function(fn) {
+        _hook("remove", fn)
+      };
+
+      function _hook(event_name, fn) {
         if( typeof fn !== 'function' ) {
           throw "fn must be function.";
         }
         else {
-          if( event_name == 'update' || event_name == 'remove') {
-            events[key][event_name] = fn;
-          }
+          events[key][event_name] = fn;
         }
-      };
+      }
     };
   
     return that;

@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
   console.log( profile.skills[1]() ); // output: javascript
 
   // Hooks 'update' event on 'detail.title' property
-  profile.detail.title.on('update', function(old_val, new_val){
+  profile.detail.title.onUpdate(function(old_val, new_val){
     console.log('title updated from ' + old_val + ' to ' + new_val);
   });
 
@@ -40,12 +40,15 @@ document.addEventListener("DOMContentLoaded", function() {
   profile.detail.title('PM');
 
   // Hooks 'remove' event on 'age' property
-  profile.age.on('remove', function(removed){
+  profile.age.onRemove(function(removed){
     console.log('age removed (' + removed + ')');
   });
 
   // Removes 'age' property, which will trigger the hooked 'remove' event.
   profile.age.remove();
+
+  // Causes an exception because the input of onRemove() must be function.
+  profile.name.onRemove("hello");
 
 }, false);
     </script>
