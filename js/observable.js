@@ -6,10 +6,7 @@
         obj = input_obj;
 
     for(var key in obj) {
-      //
-      // 如果 obj[key] 是 Array 或 Object
-      // 則遞迴呼叫 $.observable()
-      //
+      // call $.observable() recursively when obj[key] is Array or another object
       var _type = Object.prototype.toString.call(obj[key]).slice(8);
       if(  _type.indexOf('Object') !== -1 || _type.indexOf('Array') !== -1 ) {
          that[key] = $.observable(obj[key]);
@@ -63,7 +60,7 @@
 
       that[key].on = function(event_name, fn) {
         if( typeof fn !== 'function' ) {
-          throw "fn must ne a function.";
+          throw "fn must be function.";
         }
         else {
           if( event_name == 'update' || event_name == 'remove') {
