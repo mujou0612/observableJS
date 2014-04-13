@@ -25,7 +25,7 @@ Properties themselves of observable objects made by observaleJS are function act
 
 ###- Observe properties###
 
-Use **onUpdate** and **onRemove** can hook event handler (callback function) on properties of observable objects produced by observableJS.
+Use **onUpdate()** and **onRemove()** can hook event handler (callback function) on properties of observable objects produced by observableJS.
 
 Once values of these hooked properties are updated/removed, the corresponding event handlers will be invoked automatically. Below is a simple example to illustrate the idea:
 
@@ -40,9 +40,9 @@ Once values of these hooked properties are updated/removed, the corresponding ev
         // Then output "property1 being updated" automatically on browser console.
 
 ###- Delete properties###
-Call **remove()** on a property can delete the property itself and all hooked event handlers on it.
+Call **remove()** on a property can delete the property itself and all event handlers being hooked on it.
         
-        // Delete the property from observableObject
+        // Delete property1 of observableObject
         observableObject.property1.remove(); 
 
 ###NOTE: objects are "recursively affected" by observaleJS, which means that if the value of a propery is Array or another Object. its properies are tranformed into functions as getters/setters and can be hooked event handlers.
