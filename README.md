@@ -1,7 +1,8 @@
 ObservableJS: Make object properties 'observable'.
 =============
 
-ObservableJS can turn javascript object properties into 'observale' ones. The 'observable' here indicates that properties will trigger specific pre-hooked event handlers when they get changed(updated/removed).
+ObservableJS can turn javascript object properties into 'observale' ones. The 'observable' here indicates that properties will trigger specific pre-hooked event handlers when they get changed
+(updated/removed).
 
 Making propertis Observable provide a modular way to organize behaviors on client-side data model when building web apps.
 
