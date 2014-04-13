@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Demo of observable.js</title>
+  </head>
+  <body>
+    <script type="text/javascript" src="./js/observable.js"></script>   
+    <script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function() {
+
+  var profile = $.observable({
+    'name': 'xian yee',
+    'age': 32,
+    'detail': {
+      'title': 'RD',
+      'years': 8
+    },
+    'skills': [
+     'scala', 'javascript','c/c++'
+    ]
+  });
+
+  // Gets property
+  console.log( profile.name() ); // output: xian yee
+ 
+  // Gets property: property is another Object
+  console.log( profile.detail.years() ); // output: 8
+
+  // Gets property: property is Array
+  console.log( profile.skills[1]() ); // output: javascript
+
+  // Hooks 'update' event on 'detail.title' property
+  profile.detail.title.on('update', function(old_val, new_val){
+    console.log('title updated from ' + old_val + ' to ' + new_val);
+  });
+
+  // Updates 'details.title' property, which will trigger the hooled 'update' event.
+  profile.detail.title('PM');
+
+  // Hooks 'remove' event on 'age' property
+  profile.age.on('remove', function(removed){
+    console.log('age removed (' + removed + ')');
+  });
+
+  // Removes 'age' property, which will trigger the hooked 'remove' event.
+  profile.age.remove();
+
+}, false);
+    </script>
+  </body>
+</html>
