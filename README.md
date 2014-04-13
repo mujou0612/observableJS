@@ -36,8 +36,7 @@ Once values of these hooked properties are updated/removed, the corresponding ev
         // Call setter to update value of property1
         observableObject.peoperty1(newVlaue);
 
-       // Then output "property1 being updated" automatically on browser 
-          console.
+        // Then output "property1 being updated" automatically on browser console.
 
 ###- Delete properties###
 Call **remove()** on a property can delete the property itself and all hooked event handlers on it.
